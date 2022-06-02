@@ -1,6 +1,7 @@
 #---------------------------IMPORTS--------------------------------------------
 import numpy as np
 import pandas as pd
+import pylab
 from scipy import stats
 from matplotlib import pyplot as plt
 import seaborn as se
@@ -193,3 +194,10 @@ print(crosstabresult)
 chiresult=chi2_contingency(crosstabresult)
 print(chiresult)
 #---------------------------------
+
+#-------------------------QQ plot for investigating the deviation from normal distribution-----------------
+titanic.fillna(np.mean(titanic["Age"]))
+stats.probplot(titanic["Age"],dist="norm",plot=pylab)
+pylab.savefig("QQ_Age")
+pylab.show()
+#------------------------------------------------------------------------------------------
