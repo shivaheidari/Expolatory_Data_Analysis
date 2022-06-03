@@ -5,6 +5,7 @@ import pylab
 from scipy import stats
 from matplotlib import pyplot as plt
 import seaborn as se
+from scipy.stats import chi2_contingency
 #-----------------------------import of files-------------------------------------
 titanic=pd.read_csv("train.csv")
 #------------------------------------Metadata-------------------
@@ -72,8 +73,9 @@ print()
 
 #----------Histogram-------------
 collist.remove("PassengerId")
-histcol=collist.append("Sex")
-for col in histcol:
+collist.append("Sex")
+
+for col in collist:
     plt.hist(titanic[col])
     plt.title(col)
     plt.show()
@@ -181,8 +183,8 @@ print(crosstabresult)
 chiresult=chi2_contingency(crosstabresult)
 print("chiresult",chiresult)
 #--------------------Age group vs Survived----------------
-category=pd.cut(titanic.Age,bins=[0,2,17,65,99],labels=['Toddler','Child','Adult','Elderly'])
-titanic.insert(5,"Age group",category)
+# category=pd.cut(titanic.Age,bins=[0,2,17,65,99],labels=['Toddler','Child','Adult','Elderly'])
+# titanic.insert(5,"Age group",category)
 # print(titanic["Age group"].value_counts(normalize=True))
 crosstabresult=pd.crosstab(index=titanic["Survived"],columns=titanic["Age group"])
 print(crosstabresult)
