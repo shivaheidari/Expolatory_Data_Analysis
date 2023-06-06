@@ -1,0 +1,2 @@
+v1 and v2 fail to reject
+{'result': 'fail to reject', 'p_value': 1.0, 'odds_ratio': 1.0}
