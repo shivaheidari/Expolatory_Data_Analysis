@@ -1,0 +1,6 @@
+{
+  "data_type" : "categorical",
+  "confidance": 0.95,
+  "variable_source": ["v1"],
+  "variable_target": ["v2"]
+}

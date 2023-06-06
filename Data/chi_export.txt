@@ -1,4 +1,22 @@
-{'chi_stat': 0.0, 'p_val': 1.0, 'dof': 1, 'expected': array([[2., 1.],
+0    1
+1    1
+2    0
+3    0
+4    0
+5    1
+6    1
+7    1
+8    1
+Name: v1, dtype: int64and0    1
+1    1
+2    0
+3    0
+4    1
+5    0
+6    0
+7    0
+8    0
+Name: v2, dtype: int64Fail to reject{'chi_stat': 0.0, 'p_val': 1.0, 'dof': 1, 'expected': array([[2., 1.],
        [4., 2.]])}
 v2  0  1
 v1      
